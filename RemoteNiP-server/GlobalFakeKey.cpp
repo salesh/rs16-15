@@ -4,10 +4,12 @@
 #include <X11/keysymdef.h>
 #include <X11/Xmd.h>
 #include <X11/extensions/XTest.h>
-#include "x11info.h"             //TO DO !!!
+#include "x11info.h"
 
-//Since we dont have packet we need to install it x11/etc
+//Since we dont have package we need to install it x11/etc
 //sudo apt-get install x11proto-core-dev
+//sudo apt-get install libxtst-dev
+//sudo apt-get install libx11-dev
 
 
 
@@ -440,24 +442,24 @@ GlobalFakeKey::~GlobalFakeKey(){
 
 //We need to find out which key we get
 
-void GlobalFakeKey::send_key(Qt::Key key, bool down){
-    KeySym key_sim;
-    bool shift_set= false;
-    bool alt_set=false;
+void GlobalFakeKey::sendKey(Qt::Key key, bool down){
+    KeySym keySim;
+    bool shiftSet= false;
+    bool altSet=false;
 
     Display *display=X11Info::display();
     if(!display)
         return;
     do{
         if(key>=Qt::Key_A && key<=Qt::Key_Z){
-                key_sim=QChar(key).toLower().unicode();
+                keySim=QChar(key).toLower().unicode();
                 break;
         }
         int i=1;
         bool found=false;
         while (KeyTbl[i]){
             if(key==KeyTbl[i]){
-                key_sim=(KeySym)KeyTbl[i-1];
+                keySim=(KeySym)KeyTbl[i-1];
                 found=true;
                 break;
             }
@@ -468,74 +470,74 @@ void GlobalFakeKey::send_key(Qt::Key key, bool down){
 
         //finding native code of the key
         if((key <0x1000 && key>=0x20) || (key>=Qt::Key_0 && key<=Qt::Key_9)){
-            KeySym key_sym=QChar(key).unicode();
-            KeyCode Key_code =XKeysymToKeycode(display, key_sym);
-            int syms_per_keycode;
-            KeySym *key_map=XGetKeyboardMapping(display, Key_code, 1, &syms_per_keycode);
+            KeySym keySym=QChar(key).unicode();
+            KeyCode KeyCode =XKeysymToKeycode(display, keySym);
+            int symsPerKeycode;
+            KeySym *keyMap=XGetKeyboardMapping(display, KeyCode, 1, &symsPerKeycode);
 
             //skipping Japanci
 
 
-            if(key_sym==key_map[1] && key!=key_map[0]){ //to check !
-                send_modifier(Qt::ShiftModifier, true);
-                shift_set=true;
+            if(keySym==keyMap[1] && key!=keyMap[0]){ //to check !
+                sendModifier(Qt::ShiftModifier, true);
+                shiftSet=true;
 
               }
-            else if(key_sym==key_map[4]){
-                send_modifier(Qt::AltModifier, true);
-                alt_set=true;
+            else if(keySym==keyMap[4]){
+                sendModifier(Qt::AltModifier, true);
+                altSet=true;
             }
-            XFree(key_map); //everything allocated via Xlib, is set free by Xfree (allocated memory)
+            XFree(keyMap); //everything allocated via Xlib, is set free by Xfree (allocated memory)
             break;
         }
         return;
         } while(0);
 
-        XTestFakeKeyEvent(display, XKeysymToKeycode(display, key_sim), down, 0);
-        if(shift_set)
-            send_modifier(Qt::ShiftModifier, false);
-        else if(alt_set)
-            send_modifier(Qt::AltModifier, false);
+        XTestFakeKeyEvent(display, XKeysymToKeycode(display, keySim), down, 0);
+        if(shiftSet)
+            sendModifier(Qt::ShiftModifier, false);
+        else if(altSet)
+            sendModifier(Qt::AltModifier, false);
         GlobalFakeKey::wait(1);
 }
 
-void GlobalFakeKey::send_modifier(Qt::KeyboardModifier Modifiers, bool down){
+void GlobalFakeKey::sendModifier(Qt::KeyboardModifier modifiers, bool down){
     if(!(_d->display)) //running the check server is actually ON
         return;
     
     
-    KeyCode shift_key_code=XKeysymToKeycode(_d->display, XK_Shift_L );
-    KeyCode control_key_code=XKeysymToKeycode(_d->display, XK_Control_L );
-    KeyCode alt_key_code=XKeysymToKeycode(_d->display, XK_Alt_L );
+    KeyCode shiftKeyCode=XKeysymToKeycode(_d->display, XK_Shift_L );
+    KeyCode controlKeyCode=XKeysymToKeycode(_d->display, XK_Control_L );
+    KeyCode altKeyCode=XKeysymToKeycode(_d->display, XK_Alt_L );
     
-    if(Modifiers & Qt::ShiftModifier)
-        XTestFakeKeyEvent(_d->display, shift_key_code, down, 0);
-    if(Modifiers & Qt::ControlModifier)
-        XTestFakeKeyEvent(_d->display, control_key_code, down, 0);
-    if(Modifiers & Qt::AltModifier)
-        XTestFakeKeyEvent(_d->display, alt_key_code, down, 0);
+    if(modifiers & Qt::ShiftModifier)
+        XTestFakeKeyEvent(_d->display, shiftKeyCode, down, 0);
+    if(modifiers & Qt::ControlModifier)
+        XTestFakeKeyEvent(_d->display, controlKeyCode, down, 0);
+    if(modifiers & Qt::AltModifier)
+        XTestFakeKeyEvent(_d->display, altKeyCode, down, 0);
     
     GlobalFakeKey::wait(1);
 
 }
 
-void GlobalFakeKey::send_button(Qt::MouseButton button, bool down){
+void GlobalFakeKey::sendButton(Qt::MouseButton button, bool down){
     if(!(_d->display))
         return;
-    int native_button=1;
+    int nativeButton=1;
     
     if(button==Qt::LeftButton)
-        native_button=1;
+        nativeButton=1;
     else if (button==Qt::RightButton)
-        native_button=3;
+        nativeButton=3;
     else if (button==Qt::MiddleButton)
-        native_button=2;
+        nativeButton=2;
     
-    XTestFakeButtonEvent(_d->display, native_button, down, 0);
+    XTestFakeButtonEvent(_d->display, nativeButton, down, 0);
     GlobalFakeKey::wait(1);
 }
 
-void GlobalFakeKey::send_scroll(int direction, int delta, double acceleration){
+void GlobalFakeKey::sendScroll(int direction, int delta, double acceleration){
     if(!(_d->display))
         return;
     
@@ -570,7 +572,7 @@ void GlobalFakeKey::wait(const int ms){
     time.start();
     while (time.elapsed() < ms);
 }
-Qt::Key GlobalFakeKey::modifier_to_key(Qt::KeyboardModifier mod){
+Qt::Key GlobalFakeKey::modifierToKey(Qt::KeyboardModifier mod){
 
     switch (mod) {
      case Qt::ShiftModifier:

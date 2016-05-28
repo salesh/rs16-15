@@ -6,170 +6,88 @@ RemoteClient::RemoteClient(QWidget *parent) :
     ui(new Ui::RemoteClient){
     ui->setupUi(this);
 
-    m_emptyString = "";
-
-    tcpSocket = NULL;
+    tcpSocket = nullptr;
 
     tcpServer = new QTcpServer(this);
     udpSocket = new QUdpSocket(this);
-    connectionRequestTimer = new QTimer(this);
 
-//  connect(tcpServer, SIGNAL(newConnection()), this, SLOT(newConnection()));
-    connect(connectionRequestTimer, SIGNAL(timeout()), this, SLOT(sendConnectionRequest()));
-
+    connect(tcpServer, SIGNAL(newConnection()), this, SLOT(newConnection()));
+    connect(ui->chooseNetworkButton, SIGNAL(clicked()), this, SLOT(sendConnectionRequest()));
+    connect(ui->searchButton,SIGNAL(clicked()),this,SLOT(initialize()));
 }
-
 
 RemoteClient::~RemoteClient(){
     delete ui;
-}
-
-
-void RemoteClient::on_searchButton_clicked(){
-    initialize();
+    tcpServer->close();
+    tcpServer->deleteLater();
+    udpSocket->abort();
+    udpSocket->deleteLater();
 }
 
 void RemoteClient::initialize(){
+    ui->chooseNetworkComboBox->clear();
     tcpServer->close();
-    tcpServer->listen(QHostAddress::LocalHost, 5600);
+    tcpServer->listen(QHostAddress::AnyIPv4, 5600);
 
-    QString ipAddress;
-    QList<QHostAddress> ipAddressesList = QNetworkInterface::allAddresses();
-        for (int i = 0; i < ipAddressesList.size(); ++i) {
-            if (ipAddressesList.at(i) != QHostAddress::LocalHost &&
-                ipAddressesList.at(i).toIPv4Address()) {
-                ipAddress = ipAddressesList.at(i).toString();
-                ui->chooseNetworkComboBox->addItem(ipAddress);
-                break;
-            }
-        }
-
-
+    QByteArray datagram = "NiP:Broadcast";
 
     udpSocket->close();
-    connect(udpSocket, SIGNAL(readyRead()),this,SLOT(incomingUdpData()));
-    udpSocket->bind(5600,QUdpSocket::DontShareAddress | QUdpSocket::ReuseAddressHint);
+
+    udpSocket->bind(QHostAddress::AnyIPv4, 5600, QUdpSocket::DontShareAddress | QUdpSocket::ReuseAddressHint);
+    connect(udpSocket, SIGNAL(readyRead()), this, SLOT(incomingUdpData()));
+    udpSocket->writeDatagram(datagram, QHostAddress::Broadcast, 5600);
 }
 
-void RemoteClient::on_chooseNetworkButton_clicked(){
-    m_hostAddress.setAddress(ui->chooseNetworkComboBox->currentText());
-    sendConnectionRequest();
-}
-
+// send connection request to selected address
 void RemoteClient::sendConnectionRequest(){
+    m_hostAddress.setAddress((ui->chooseNetworkComboBox->currentText()));
+
     QByteArray datagram = "NiP:Hello";
 
+    tcpServer->close();
+    tcpServer->listen(QHostAddress::AnyIPv4, 5600);
     udpSocket->writeDatagram(datagram, m_hostAddress, 5600);
 }
 
- //No need for this yet(sync with server)
-
-/*
+// if there is new pending connection request, establish connection
 void RemoteClient::newConnection(){
     if (!tcpSocket) {
         tcpSocket = tcpServer->nextPendingConnection();
 
         connect(tcpSocket, SIGNAL(disconnected()), this, SLOT(deleteConnection()));
         connect(tcpSocket, SIGNAL(readyRead()), this, SLOT(incomingData()));
-
-        abortConnectionRequest();
-
-        networkTimeoutTimer->start();
     }
 }
+
+
 
 void RemoteClient::incomingUdpData(){
     QHostAddress hostAddress;
     QByteArray datagram;
-    datagram.resize(udpSocket->pendingDatagramSize());
 
+    datagram.resize(udpSocket->pendingDatagramSize());
     udpSocket->readDatagram(datagram.data(), datagram.size(), &hostAddress);
 
-    const QString magicMessageConnected = "NiP:Connected";
-    const QString magicMessageNotConnected = "NiP:NotConnected";
-    const QString magicMessageServerConnecting = "NiP:Connecting";
+    QString available = "NiP:NotConnected";
+    QString bussy = "NiP:Connected";
 
-    if (datagram == magicMessageConnected){
-        addServer(hostAddress, true);
-    }
-    else if (datagram == magicMessageNotConnected){
-        addServer(hostAddress, false);
-    }
-    else if (datagram == magicMessageServerConnecting){
+    if(datagram.indexOf(available) == 0) {
+        // if positive broadcast reply add address to combobox
+        ui->chooseNetworkComboBox->addItem(hostAddress.toString());
+    } else if(datagram.indexOf(bussy) == 0){
 
     }
 }
-
-void RemoteClient::abortConnectionRequest(){
-    connectionRequestTimer->stop();
-}
-
-void RemoteClient::addServer(QHostAddress hostAddress, bool connected){
-    bool found = false;
-    for (int i = 0; i < serverList.size(); i++){
-        if (serverList.at(i).hostAddress == hostAddress) {
-            found = true;
-            serverList[i].connected = connected;
-            break;
-        }
-    }
-    if (!found){
-        QRCServer qrcServer;
-        qrcServer.hostAddress = hostAddress;
-        qrcServer.hostName = hostAddress.toString();
-        qrcServer.connected = connected;
-        serverList.append(qrcServer);
-
-        QHostInfo::lookupHost(hostAddress.toString(),
-                               this, SLOT(saveResolvedHostName(QHostInfo)));
-    }
-
-
-//    for (int i = 0; i < serverList.size(); i++){
-//        emit serverFound(serverList.at(i).hostAddress.toString(),
-//                         serverList.at(i).hostName,
-//                         serverList.at(i).connected);
-//    }
-}
-
-void RemoteClient::clearServerList(){
-    serverList.clear();
-}
-
 
 void RemoteClient::incomingData(){
-    QByteArray data = tcpSocket->readAll();
-   // int type = data.left(1).toInt();
-
-    int payloadsize = data.mid(1,10).toInt();   //getting the size of the whole payload
-                    data = data.mid(11);                        //removing obsolete data
-                    while (data.size() != payloadsize) {        //wait for the missing data
-                        tcpSocket->waitForReadyRead();
-                        data.append(tcpSocket->readAll());
-                    }
-
-//    switch (type) {
-//        case 1: incomingIcon(data);                         //process the data
-//                break;
-//        case 2: incomingAmarokData(data);
-//                break;
-//    }
-
+    // TODO send a message to server
 }
 
 void RemoteClient::deleteConnection(){
     tcpSocket->abort();
     tcpSocket->deleteLater();
-    tcpSocket = NULL;
-
-    networkTimeoutTimer->stop();
+    tcpSocket = nullptr;
 }
 
-void RemoteClient::updateNetConfig(){
-    if ((session == NULL) || (!session->isOpen()))
-    {
-        netConfigManager->updateConfigurations();
-    }
-}
 
-*/
+

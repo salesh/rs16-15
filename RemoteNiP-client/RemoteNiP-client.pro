@@ -20,6 +20,6 @@ HEADERS  += remoteclient.h
 
 FORMS    += remoteclient.ui
 
-CONFIG += mobility
-MOBILITY = 
+QMAKE_CXXFLAGS += -std=c++11
 
+CONFIG += mobility

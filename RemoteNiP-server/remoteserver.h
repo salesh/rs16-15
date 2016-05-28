@@ -19,16 +19,16 @@ public:
 
 private:
     Ui::RemoteServer *ui;
-    QUdpSocket *_udp_socket;  // for establishing communication
-    QTcpSocket *_tcp_socket;  // for communication
+    QUdpSocket *udpSocket;  // for establishing communication
+    QTcpSocket *tcpSocket;  // for communication
 
-    void connection_request();
-    void transmission_request();
+    void connectionRequest();
+    void transmissionRequest();
 
 private slots:
-    void incoming_udp_data();
-    void delete_connection();
-    void socket_connected();
+    void incomingUdpData();
+    void deleteConnection();
+    void socketConnected();
 };
 
 #endif // REMOTESERVER_H

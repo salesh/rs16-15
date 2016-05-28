@@ -6,25 +6,24 @@ RemoteServer::RemoteServer(QWidget *parent) :
     ui(new Ui::RemoteServer) {
     ui->setupUi(this);
 
-    _tcp_socket = nullptr;
-    _udp_socket = new QUdpSocket(this);
+    tcpSocket = nullptr;
+    udpSocket = new QUdpSocket(this);
 
-    connect(_udp_socket, SIGNAL(readyRead()), this, SLOT(incoming_udp_data()));
-
+    connect(udpSocket, SIGNAL(readyRead()), this, SLOT(incomingUdpData()));
 
     /*
      * Default port 5600
      * DontShareAddress - only this service listens to this port
      * ReuseAddressHint - reuse even if it's used by other service
      */
-    _udp_socket->bind(5600, QUdpSocket::DontShareAddress
+    udpSocket->bind(QHostAddress::AnyIPv4, 5600, QUdpSocket::DontShareAddress
                      | QUdpSocket::ReuseAddressHint);
 }
 
 RemoteServer::~RemoteServer() {
-    if(_tcp_socket){
-        _tcp_socket->disconnectFromHost();
-        _tcp_socket->deleteLater();
+    if(tcpSocket){
+        tcpSocket->disconnectFromHost();
+        tcpSocket->deleteLater();
     }
 
     delete ui;
@@ -35,59 +34,56 @@ RemoteServer::~RemoteServer() {
  * or transmission request
  *
  */
-void RemoteServer::incoming_udp_data() {
-    if(_tcp_socket == nullptr)
-        connection_request();
+void RemoteServer::incomingUdpData() {
+    if(tcpSocket == nullptr)
+        connectionRequest();
     else
-        transmission_request();
+        transmissionRequest();
 }
 
-void RemoteServer::connection_request() {
+void RemoteServer::connectionRequest() {
     QByteArray msg;
-    QByteArray ans;
     QHostAddress addr;
+    msg.resize(udpSocket->pendingDatagramSize());
 
-    msg.resize(_udp_socket->pendingDatagramSize());
+    udpSocket->readDatagram(msg.data(), msg.size(), &addr);
 
-    _udp_socket->readDatagram(msg.data(), msg.size(), &addr);
-
-    QString req = "RNIP:REQ";
+    QString req = "NiP:Hello";
+    QString br = "NiP:Broadcast";
 
     if(msg.indexOf(req) == 0) {
-        ans = "Connecting...";
-        _udp_socket->writeDatagram(ans, addr, 5600);
+        tcpSocket = new QTcpSocket();
 
-        _tcp_socket = new QTcpSocket();
-
-        connect(_tcp_socket, SIGNAL(disconnected()), this, SLOT(delete_connection()));
+        connect(tcpSocket, SIGNAL(disconnected()), this, SLOT(deleteConnection()));
 
         /*
         * if socket is not ready for reconnection
         * this signal will be emitted
         */
-        connect(_tcp_socket, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(delete_connection()));
-
-        /*
-        * FIX won't send connected() signal from local
-        */
-        connect(_tcp_socket, SIGNAL(connected()), this, SLOT(socket_connected()));
-
-        _tcp_socket->connectToHost(addr, 5600);
+        connect(tcpSocket, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(deleteConnection()));
+        connect(tcpSocket, SIGNAL(connected()), this, SLOT(socketConnected()));
+        tcpSocket->connectToHost(addr, 5600);
+    } else if(msg.indexOf(br) == 0) {
+        QByteArray ans = "NiP:Connected";
+        if(!tcpSocket) {
+            ans = "NiP:NotConnected";
+        }
+        udpSocket->writeDatagram(ans, addr, 5600);
     }
 }
 
-void RemoteServer::transmission_request() {
+void RemoteServer::transmissionRequest() {
     // TODO recieve a message from client
 }
 
-void RemoteServer::delete_connection() {
-    if(_tcp_socket == nullptr)
+void RemoteServer::deleteConnection() {
+    if(tcpSocket == nullptr)
         return;
 
-    _tcp_socket->deleteLater();
-    _tcp_socket = nullptr;
+    tcpSocket->deleteLater();
+    tcpSocket = nullptr;
 }
 
-void RemoteServer::socket_connected() {
+void RemoteServer::socketConnected() {
     QMessageBox::information(this, tr("Connection"), tr("Socket connected!"));
 }
