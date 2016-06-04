@@ -47,6 +47,8 @@ private slots:
     void shiftButtonIndicator();
     void altButtonIndicator();
     void ctrlButtonIndicator();
+    void disconnectFromNetwork();
+
 };
 
 #endif // REMOTECLIENT_H

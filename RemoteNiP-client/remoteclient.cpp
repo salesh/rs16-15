@@ -22,6 +22,7 @@ RemoteClient::RemoteClient(QWidget *parent) :
     connect(ui->altButton,SIGNAL(clicked()),this,SLOT(altButtonIndicator()));
     connect(ui->shiftButton,SIGNAL(clicked()),this,SLOT(shiftButtonIndicator()));
     connect(ui->ctrlButton,SIGNAL(clicked()),this,SLOT(ctrlButtonIndicator()));
+    connect(ui->disconnectButton,SIGNAL(clicked()),this,SLOT(disconnectFromNetwork()));
 }
 
 RemoteClient::~RemoteClient(){
@@ -87,23 +88,24 @@ void RemoteClient::incomingUdpData(){
 
 
 void RemoteClient::deleteConnection(){
-    tcpSocket->abort();
     tcpSocket->deleteLater();
     tcpSocket = nullptr;
+    ui->inputWidget->hide();
+    QMessageBox::information(this, "Kick!","Disconnected!");
+}
+
+void RemoteClient::disconnectFromNetwork(){
+    tcpSocket->disconnectFromHost();
 }
 
 void RemoteClient::newUi(){
-// TODO Uncomment this!
-
-//    if(ui->chooseNetworkComboBox->currentText()==""){
-//        QMessageBox::information(this, "Fail","IP not selected!");
-//        return;
-//    }
+    if(ui->chooseNetworkComboBox->currentText()==""){
+        QMessageBox::information(this, "Fail!","IP not selected!");
+        return;
+    }
     ui->inputWidget->show();
 }
 
-
-//looks awful, but at least works(hope so)
 
 void RemoteClient::keyboardPressed(){
     QPushButton *clickedButton=qobject_cast<QPushButton *>(sender());
@@ -254,6 +256,9 @@ void RemoteClient::keyboardPressed(){
     }
     else if(clickedButton->objectName()=="backspaceButton"){
         key=Qt::Key_Backspace;
+    }
+    else if(clickedButton->objectName()=="enterButton"){
+        key=Qt::Key_Return;
     }
 
     if(shiftIndicator==true)
@@ -426,6 +431,9 @@ void RemoteClient::keyboardReleased(){
     else if(clickedButton->objectName()=="backspaceButton"){
         key=Qt::Key_Backspace;
     }
+    else if(clickedButton->objectName()=="enterButton"){
+        key=Qt::Key_Return;
+    }
 
     if(shiftIndicator==true)
         modifiers=modifiers | Qt::ShiftModifier;
@@ -445,23 +453,36 @@ void RemoteClient::keyboardReleased(){
 
 }
 
- void RemoteClient::shiftButtonIndicator(){
-     if(shiftIndicator==true)
+void RemoteClient::shiftButtonIndicator(){
+     if(shiftIndicator==true){
          shiftIndicator=false;
-     else
+         ui->shiftButton->setStyleSheet("background-color: none");
+     }
+     else{
          shiftIndicator=true;
+         ui->shiftButton->setStyleSheet("background-color: purple;color: white");
+     }
  }
 
  void RemoteClient::altButtonIndicator(){
-     if(altIndicator==true)
-         altIndicator=false;
-     else
-         altIndicator=true;
+     if(altIndicator==true){
+              altIndicator=false;
+              ui->altButton->setStyleSheet("background-color: none");
+          }
+          else{
+              altIndicator=true;
+              ui->altButton->setStyleSheet("background-color: purple;color: white");
+          }
  }
 
  void RemoteClient::ctrlButtonIndicator(){
-     if(ctrlIndicator==true)
+     if(ctrlIndicator==true){
          ctrlIndicator=false;
-     else
+         ui->ctrlButton->setStyleSheet("background-color: none");
+     }
+     else{
          ctrlIndicator=true;
+         ui->ctrlButton->setStyleSheet("background-color: purple;color: white");
+     }
  }
+

@@ -25,4 +25,16 @@ QMAKE_CXXFLAGS += -std=c++11
 
 CONFIG += mobility
 
-DISTFILES +=
+DISTFILES += \
+    img/AndroidManifest.xml \
+    img/gradle/wrapper/gradle-wrapper.jar \
+    img/gradlew \
+    img/res/values/libs.xml \
+    img/build.gradle \
+    img/gradle/wrapper/gradle-wrapper.properties \
+    img/gradlew.bat \
+    img/AndroidManifest.xml \
+    img/res/values/libs.xml \
+    img/build.gradle
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/img

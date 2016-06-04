@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>522</width>
-    <height>262</height>
+    <width>502</width>
+    <height>755</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -38,10 +38,10 @@
    <widget class="QPushButton" name="searchButton">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>90</x>
       <y>40</y>
-      <width>181</width>
-      <height>71</height>
+      <width>300</width>
+      <height>70</height>
      </rect>
     </property>
     <property name="text">
@@ -51,10 +51,10 @@
    <widget class="QComboBox" name="chooseNetworkComboBox">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>90</x>
       <y>130</y>
-      <width>161</width>
-      <height>41</height>
+      <width>300</width>
+      <height>70</height>
      </rect>
     </property>
     <property name="duplicatesEnabled">
@@ -64,10 +64,10 @@
    <widget class="QPushButton" name="chooseNetworkButton">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>200</y>
-      <width>161</width>
-      <height>41</height>
+      <x>90</x>
+      <y>220</y>
+      <width>300</width>
+      <height>70</height>
      </rect>
     </property>
     <property name="text">
@@ -79,8 +79,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>521</width>
-      <height>261</height>
+      <width>501</width>
+      <height>751</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -93,10 +93,10 @@
      <widget class="QPushButton" name="qButton">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
+        <x>0</x>
+        <y>540</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -106,10 +106,10 @@
      <widget class="QPushButton" name="shiftButton">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>140</y>
-        <width>71</width>
-        <height>31</height>
+        <x>0</x>
+        <y>620</y>
+        <width>91</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -119,10 +119,10 @@
      <widget class="QPushButton" name="altButton">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>180</y>
-        <width>71</width>
-        <height>31</height>
+        <x>0</x>
+        <y>660</y>
+        <width>70</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -132,23 +132,23 @@
      <widget class="QPushButton" name="wButton">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
+        <x>40</x>
+        <y>540</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
-       <string>W</string>
+       <string>w</string>
       </property>
      </widget>
      <widget class="QPushButton" name="eButton">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
+        <x>80</x>
+        <y>540</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -158,10 +158,10 @@
      <widget class="QPushButton" name="rButton">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
+        <x>120</x>
+        <y>540</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -171,10 +171,10 @@
      <widget class="QPushButton" name="tButton">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
+        <x>160</x>
+        <y>540</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -184,10 +184,10 @@
      <widget class="QPushButton" name="yButton">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
+        <x>200</x>
+        <y>540</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -197,10 +197,10 @@
      <widget class="QPushButton" name="uButton">
       <property name="geometry">
        <rect>
-        <x>260</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
+        <x>240</x>
+        <y>540</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -210,10 +210,10 @@
      <widget class="QPushButton" name="iButton">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
+        <x>280</x>
+        <y>540</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -223,10 +223,10 @@
      <widget class="QPushButton" name="oButton">
       <property name="geometry">
        <rect>
-        <x>340</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
+        <x>320</x>
+        <y>540</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -236,10 +236,10 @@
      <widget class="QPushButton" name="pButton">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
+        <x>360</x>
+        <y>540</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -249,10 +249,10 @@
      <widget class="QPushButton" name="aButton">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
+        <x>0</x>
+        <y>580</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -262,10 +262,10 @@
      <widget class="QPushButton" name="sButton">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
+        <x>40</x>
+        <y>580</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -275,10 +275,10 @@
      <widget class="QPushButton" name="dButton">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
+        <x>80</x>
+        <y>580</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -288,10 +288,10 @@
      <widget class="QPushButton" name="fButton">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
+        <x>120</x>
+        <y>580</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -301,10 +301,10 @@
      <widget class="QPushButton" name="gButton">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
+        <x>160</x>
+        <y>580</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -314,10 +314,10 @@
      <widget class="QPushButton" name="hButton">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
+        <x>200</x>
+        <y>580</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -327,10 +327,10 @@
      <widget class="QPushButton" name="jButton">
       <property name="geometry">
        <rect>
-        <x>260</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
+        <x>240</x>
+        <y>580</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -340,10 +340,10 @@
      <widget class="QPushButton" name="kButton">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
+        <x>280</x>
+        <y>580</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -353,10 +353,10 @@
      <widget class="QPushButton" name="lButton">
       <property name="geometry">
        <rect>
-        <x>340</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
+        <x>320</x>
+        <y>580</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -366,10 +366,10 @@
      <widget class="QPushButton" name="zButton">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>140</y>
-        <width>31</width>
-        <height>31</height>
+        <x>80</x>
+        <y>620</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -379,10 +379,10 @@
      <widget class="QPushButton" name="xButton">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>140</y>
-        <width>31</width>
-        <height>31</height>
+        <x>120</x>
+        <y>620</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -392,10 +392,10 @@
      <widget class="QPushButton" name="cButton">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>140</y>
-        <width>31</width>
-        <height>31</height>
+        <x>160</x>
+        <y>620</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -405,10 +405,10 @@
      <widget class="QPushButton" name="vButton">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>140</y>
-        <width>31</width>
-        <height>31</height>
+        <x>200</x>
+        <y>620</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -418,10 +418,10 @@
      <widget class="QPushButton" name="bButton">
       <property name="geometry">
        <rect>
-        <x>260</x>
-        <y>140</y>
-        <width>31</width>
-        <height>31</height>
+        <x>240</x>
+        <y>620</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -431,10 +431,10 @@
      <widget class="QPushButton" name="nButton">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>140</y>
-        <width>31</width>
-        <height>31</height>
+        <x>280</x>
+        <y>620</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -444,10 +444,10 @@
      <widget class="QPushButton" name="mButton">
       <property name="geometry">
        <rect>
-        <x>340</x>
-        <y>140</y>
-        <width>31</width>
-        <height>31</height>
+        <x>320</x>
+        <y>620</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -457,23 +457,23 @@
      <widget class="QPushButton" name="backspaceButton">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>180</y>
-        <width>101</width>
-        <height>31</height>
+        <x>340</x>
+        <y>660</y>
+        <width>51</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
-       <string>Backspace</string>
+       <string>&lt;=</string>
       </property>
      </widget>
      <widget class="QPushButton" name="dotNetButton">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>140</y>
-        <width>31</width>
-        <height>31</height>
+        <x>360</x>
+        <y>620</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -483,10 +483,10 @@
      <widget class="QPushButton" name="spaceButton">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>180</y>
-        <width>191</width>
-        <height>31</height>
+        <x>136</x>
+        <y>660</y>
+        <width>211</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -496,10 +496,10 @@
      <widget class="QPushButton" name="comaButton">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>140</y>
-        <width>31</width>
-        <height>31</height>
+        <x>400</x>
+        <y>620</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -509,11 +509,14 @@
      <widget class="QPushButton" name="_1Button">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>31</width>
-        <height>31</height>
+        <x>0</x>
+        <y>500</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="text">
        <string>1</string>
@@ -522,11 +525,14 @@
      <widget class="QPushButton" name="_2Button">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>20</y>
-        <width>31</width>
-        <height>31</height>
+        <x>40</x>
+        <y>500</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="text">
        <string>2</string>
@@ -535,11 +541,14 @@
      <widget class="QPushButton" name="_3Button">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>20</y>
-        <width>31</width>
-        <height>31</height>
+        <x>80</x>
+        <y>500</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="text">
        <string>3</string>
@@ -548,11 +557,14 @@
      <widget class="QPushButton" name="_4Button">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>20</y>
-        <width>31</width>
-        <height>31</height>
+        <x>120</x>
+        <y>500</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="text">
        <string>4</string>
@@ -561,11 +573,14 @@
      <widget class="QPushButton" name="_5Button">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>20</y>
-        <width>31</width>
-        <height>31</height>
+        <x>160</x>
+        <y>500</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="text">
        <string>5</string>
@@ -574,11 +589,14 @@
      <widget class="QPushButton" name="_6Button">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>20</y>
-        <width>31</width>
-        <height>31</height>
+        <x>200</x>
+        <y>500</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="text">
        <string>6</string>
@@ -587,11 +605,14 @@
      <widget class="QPushButton" name="_7Button">
       <property name="geometry">
        <rect>
-        <x>260</x>
-        <y>20</y>
-        <width>31</width>
-        <height>31</height>
+        <x>240</x>
+        <y>500</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="text">
        <string>7</string>
@@ -600,11 +621,14 @@
      <widget class="QPushButton" name="_8Button">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>20</y>
-        <width>31</width>
-        <height>31</height>
+        <x>280</x>
+        <y>500</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="text">
        <string>8</string>
@@ -613,11 +637,14 @@
      <widget class="QPushButton" name="_9Button">
       <property name="geometry">
        <rect>
-        <x>340</x>
-        <y>20</y>
-        <width>31</width>
-        <height>31</height>
+        <x>320</x>
+        <y>500</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="text">
        <string>9</string>
@@ -626,11 +653,14 @@
      <widget class="QPushButton" name="_0Button">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>20</y>
-        <width>31</width>
-        <height>31</height>
+        <x>360</x>
+        <y>500</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="text">
        <string>0</string>
@@ -639,10 +669,10 @@
      <widget class="QPushButton" name="backslashButton">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>140</y>
-        <width>31</width>
-        <height>31</height>
+        <x>440</x>
+        <y>620</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -652,10 +682,10 @@
      <widget class="QPushButton" name="semicolonButton">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
+        <x>360</x>
+        <y>580</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -665,10 +695,10 @@
      <widget class="QPushButton" name="upperComaButton">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
+        <x>400</x>
+        <y>580</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -678,10 +708,10 @@
      <widget class="QPushButton" name="obButton">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
+        <x>400</x>
+        <y>540</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -691,10 +721,10 @@
      <widget class="QPushButton" name="cbButton">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>60</y>
-        <width>31</width>
-        <height>31</height>
+        <x>440</x>
+        <y>540</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -704,10 +734,10 @@
      <widget class="QPushButton" name="slashButton">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
+        <x>440</x>
+        <y>580</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -717,10 +747,10 @@
      <widget class="QPushButton" name="dashButton">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>20</y>
-        <width>31</width>
-        <height>31</height>
+        <x>400</x>
+        <y>500</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -730,10 +760,10 @@
      <widget class="QPushButton" name="eqButton">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>20</y>
-        <width>31</width>
-        <height>31</height>
+        <x>440</x>
+        <y>500</y>
+        <width>47</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
@@ -743,16 +773,98 @@
      <widget class="QPushButton" name="ctrlButton">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>180</y>
-        <width>71</width>
-        <height>31</height>
+        <x>60</x>
+        <y>660</y>
+        <width>81</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="text">
        <string>Ctrl</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="enterButton">
+      <property name="geometry">
+       <rect>
+        <x>389</x>
+        <y>660</y>
+        <width>101</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Enter</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="disconnectButton">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>20</y>
+        <width>47</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string>X</string>
+      </property>
+     </widget>
+     <zorder>wButton</zorder>
+     <zorder>qButton</zorder>
+     <zorder>eButton</zorder>
+     <zorder>rButton</zorder>
+     <zorder>tButton</zorder>
+     <zorder>yButton</zorder>
+     <zorder>uButton</zorder>
+     <zorder>iButton</zorder>
+     <zorder>oButton</zorder>
+     <zorder>pButton</zorder>
+     <zorder>aButton</zorder>
+     <zorder>sButton</zorder>
+     <zorder>dButton</zorder>
+     <zorder>fButton</zorder>
+     <zorder>gButton</zorder>
+     <zorder>hButton</zorder>
+     <zorder>jButton</zorder>
+     <zorder>kButton</zorder>
+     <zorder>lButton</zorder>
+     <zorder>zButton</zorder>
+     <zorder>xButton</zorder>
+     <zorder>cButton</zorder>
+     <zorder>vButton</zorder>
+     <zorder>bButton</zorder>
+     <zorder>nButton</zorder>
+     <zorder>mButton</zorder>
+     <zorder>spaceButton</zorder>
+     <zorder>_1Button</zorder>
+     <zorder>_2Button</zorder>
+     <zorder>_3Button</zorder>
+     <zorder>_4Button</zorder>
+     <zorder>_5Button</zorder>
+     <zorder>_6Button</zorder>
+     <zorder>_7Button</zorder>
+     <zorder>_8Button</zorder>
+     <zorder>_9Button</zorder>
+     <zorder>_0Button</zorder>
+     <zorder>obButton</zorder>
+     <zorder>cbButton</zorder>
+     <zorder>slashButton</zorder>
+     <zorder>dashButton</zorder>
+     <zorder>eqButton</zorder>
+     <zorder>semicolonButton</zorder>
+     <zorder>upperComaButton</zorder>
+     <zorder>dotNetButton</zorder>
+     <zorder>backspaceButton</zorder>
+     <zorder>comaButton</zorder>
+     <zorder>backslashButton</zorder>
+     <zorder>enterButton</zorder>
+     <zorder>shiftButton</zorder>
+     <zorder>ctrlButton</zorder>
+     <zorder>altButton</zorder>
+     <zorder>disconnectButton</zorder>
     </widget>
     <widget class="QWidget" name="mouzTab">
      <attribute name="title">
@@ -776,8 +888,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>92</x>
-     <y>167</y>
+     <x>24</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -792,24 +904,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>312</x>
-     <y>247</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>254</x>
-     <y>209</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>backspaceButton</sender>
-   <signal>pressed()</signal>
-   <receiver>RemoteClient</receiver>
-   <slot>keyboardPressed()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>492</x>
-     <y>297</y>
+     <x>264</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -824,8 +920,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>232</x>
-     <y>247</y>
+     <x>184</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -840,8 +936,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>152</x>
-     <y>297</y>
+     <x>424</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -856,8 +952,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>192</x>
-     <y>167</y>
+     <x>104</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -872,8 +968,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>142</x>
-     <y>117</y>
+     <x>104</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -888,8 +984,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>112</x>
-     <y>297</y>
+     <x>384</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -904,8 +1000,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>242</x>
-     <y>167</y>
+     <x>144</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -920,8 +1016,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>292</x>
-     <y>167</y>
+     <x>184</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -936,8 +1032,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>332</x>
-     <y>167</y>
+     <x>224</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -952,8 +1048,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>382</x>
-     <y>117</y>
+     <x>304</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -968,8 +1064,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>382</x>
-     <y>167</y>
+     <x>264</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -984,8 +1080,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>422</x>
-     <y>167</y>
+     <x>304</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1000,8 +1096,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>452</x>
-     <y>167</y>
+     <x>344</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1016,8 +1112,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>392</x>
-     <y>247</y>
+     <x>344</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1032,8 +1128,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>352</x>
-     <y>247</y>
+     <x>304</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1048,8 +1144,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>422</x>
-     <y>117</y>
+     <x>344</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1064,8 +1160,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>472</x>
-     <y>117</y>
+     <x>384</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1080,8 +1176,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>42</x>
-     <y>117</y>
+     <x>24</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1096,8 +1192,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>192</x>
-     <y>117</y>
+     <x>144</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1112,8 +1208,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>142</x>
-     <y>167</y>
+     <x>64</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1128,8 +1224,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>292</x>
-     <y>387</y>
+     <x>184</x>
+     <y>737</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1144,8 +1240,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>242</x>
-     <y>117</y>
+     <x>184</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1160,8 +1256,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>332</x>
-     <y>117</y>
+     <x>264</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1176,8 +1272,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>272</x>
-     <y>247</y>
+     <x>224</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1192,8 +1288,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>92</x>
-     <y>117</y>
+     <x>64</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1208,8 +1304,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>152</x>
-     <y>227</y>
+     <x>144</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1224,8 +1320,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>292</x>
-     <y>117</y>
+     <x>224</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1240,8 +1336,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>102</x>
-     <y>227</y>
+     <x>104</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1256,8 +1352,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>92</x>
-     <y>167</y>
+     <x>24</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1272,8 +1368,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>312</x>
-     <y>247</y>
+     <x>264</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1288,24 +1384,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>232</x>
-     <y>247</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>254</x>
-     <y>209</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>backspaceButton</sender>
-   <signal>released()</signal>
-   <receiver>RemoteClient</receiver>
-   <slot>keyboardReleased()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>492</x>
-     <y>297</y>
+     <x>184</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1320,8 +1400,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>152</x>
-     <y>297</y>
+     <x>424</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1336,8 +1416,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>192</x>
-     <y>167</y>
+     <x>104</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1352,8 +1432,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>112</x>
-     <y>297</y>
+     <x>384</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1368,8 +1448,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>242</x>
-     <y>167</y>
+     <x>144</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1384,8 +1464,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>292</x>
-     <y>167</y>
+     <x>184</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1400,8 +1480,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>142</x>
-     <y>117</y>
+     <x>104</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1416,8 +1496,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>382</x>
-     <y>117</y>
+     <x>304</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1432,8 +1512,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>422</x>
-     <y>167</y>
+     <x>304</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1448,8 +1528,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>382</x>
-     <y>167</y>
+     <x>264</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1464,8 +1544,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>392</x>
-     <y>247</y>
+     <x>344</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1480,8 +1560,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>452</x>
-     <y>167</y>
+     <x>344</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1496,8 +1576,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>352</x>
-     <y>247</y>
+     <x>304</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1512,8 +1592,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>472</x>
-     <y>117</y>
+     <x>384</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1528,8 +1608,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>422</x>
-     <y>117</y>
+     <x>344</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1544,8 +1624,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>42</x>
-     <y>117</y>
+     <x>24</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1560,8 +1640,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>242</x>
-     <y>117</y>
+     <x>184</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1576,8 +1656,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>142</x>
-     <y>167</y>
+     <x>64</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1592,8 +1672,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>152</x>
-     <y>227</y>
+     <x>144</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1608,8 +1688,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>92</x>
-     <y>117</y>
+     <x>64</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1624,8 +1704,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>332</x>
-     <y>117</y>
+     <x>264</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1640,8 +1720,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>272</x>
-     <y>247</y>
+     <x>224</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1656,8 +1736,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>102</x>
-     <y>227</y>
+     <x>104</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1672,8 +1752,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>332</x>
-     <y>167</y>
+     <x>224</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1688,8 +1768,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>292</x>
-     <y>117</y>
+     <x>224</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1704,8 +1784,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>192</x>
-     <y>117</y>
+     <x>144</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1720,8 +1800,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>292</x>
-     <y>387</y>
+     <x>184</x>
+     <y>737</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1736,8 +1816,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>452</x>
-     <y>77</y>
+     <x>384</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1752,8 +1832,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>52</x>
-     <y>77</y>
+     <x>24</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1768,8 +1848,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>92</x>
-     <y>77</y>
+     <x>64</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1784,8 +1864,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>132</x>
-     <y>77</y>
+     <x>104</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1800,8 +1880,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>182</x>
-     <y>77</y>
+     <x>144</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1816,8 +1896,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>222</x>
-     <y>77</y>
+     <x>184</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1832,8 +1912,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>262</x>
-     <y>77</y>
+     <x>224</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1848,8 +1928,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>302</x>
-     <y>77</y>
+     <x>264</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1864,8 +1944,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>352</x>
-     <y>77</y>
+     <x>304</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1880,8 +1960,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>402</x>
-     <y>77</y>
+     <x>344</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1896,24 +1976,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>332</x>
-     <y>207</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>254</x>
-     <y>209</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>backslashButton</sender>
-   <signal>released()</signal>
-   <receiver>RemoteClient</receiver>
-   <slot>keyboardReleased()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>202</x>
-     <y>297</y>
+     <x>424</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1928,8 +1992,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>382</x>
-     <y>207</y>
+     <x>464</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1944,8 +2008,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>312</x>
-     <y>307</y>
+     <x>424</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1960,8 +2024,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>512</x>
-     <y>217</y>
+     <x>464</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1976,8 +2040,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>472</x>
-     <y>217</y>
+     <x>464</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -1992,8 +2056,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>432</x>
-     <y>217</y>
+     <x>424</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2008,8 +2072,8 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>262</x>
-     <y>297</y>
+     <x>384</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2024,8 +2088,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>402</x>
-     <y>77</y>
+     <x>344</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2040,8 +2104,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>302</x>
-     <y>77</y>
+     <x>264</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2056,8 +2120,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>352</x>
-     <y>77</y>
+     <x>304</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2072,8 +2136,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>262</x>
-     <y>77</y>
+     <x>224</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2088,8 +2152,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>222</x>
-     <y>77</y>
+     <x>184</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2104,8 +2168,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>182</x>
-     <y>77</y>
+     <x>144</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2120,8 +2184,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>132</x>
-     <y>77</y>
+     <x>104</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2136,8 +2200,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>92</x>
-     <y>77</y>
+     <x>64</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2152,8 +2216,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>52</x>
-     <y>77</y>
+     <x>24</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2168,8 +2232,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>452</x>
-     <y>77</y>
+     <x>384</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2184,8 +2248,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>332</x>
-     <y>207</y>
+     <x>424</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2200,8 +2264,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>382</x>
-     <y>207</y>
+     <x>464</x>
+     <y>577</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2216,8 +2280,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>432</x>
-     <y>217</y>
+     <x>424</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2232,8 +2296,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>472</x>
-     <y>217</y>
+     <x>464</x>
+     <y>617</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2248,8 +2312,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>312</x>
-     <y>307</y>
+     <x>424</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2264,8 +2328,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>262</x>
-     <y>297</y>
+     <x>384</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2280,8 +2344,8 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>512</x>
-     <y>217</y>
+     <x>464</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
@@ -2296,12 +2360,92 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>202</x>
-     <y>297</y>
+     <x>464</x>
+     <y>697</y>
     </hint>
     <hint type="destinationlabel">
      <x>254</x>
      <y>209</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>backslashButton</sender>
+   <signal>released()</signal>
+   <receiver>RemoteClient</receiver>
+   <slot>keyboardReleased()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>464</x>
+     <y>697</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>130</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>backspaceButton</sender>
+   <signal>released()</signal>
+   <receiver>RemoteClient</receiver>
+   <slot>keyboardReleased()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>344</x>
+     <y>737</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>130</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>backspaceButton</sender>
+   <signal>pressed()</signal>
+   <receiver>RemoteClient</receiver>
+   <slot>keyboardPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>344</x>
+     <y>737</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>130</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>enterButton</sender>
+   <signal>pressed()</signal>
+   <receiver>RemoteClient</receiver>
+   <slot>keyboardPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>391</x>
+     <y>737</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>454</x>
+     <y>197</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>enterButton</sender>
+   <signal>released()</signal>
+   <receiver>RemoteClient</receiver>
+   <slot>keyboardReleased()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>391</x>
+     <y>737</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>458</x>
+     <y>160</y>
     </hint>
    </hints>
   </connection>
@@ -2309,5 +2453,6 @@
  <slots>
   <slot>keyboardPressed()</slot>
   <slot>keyboardReleased()</slot>
+  <slot>disconnectFromNetwork()</slot>
  </slots>
 </ui>
