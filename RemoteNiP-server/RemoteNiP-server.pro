@@ -31,3 +31,6 @@ QMAKE_CXXFLAGS += -std=c++11
  LIBS += -lX11 \
 -lxcb \
 -lXtst
+
+RESOURCES += \
+    data.qrc

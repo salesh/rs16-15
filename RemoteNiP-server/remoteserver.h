@@ -5,6 +5,9 @@
 #include <QTcpSocket>
 #include <QUdpSocket>
 #include <QMessageBox>
+#include <QSystemTrayIcon>
+#include <QStyle>
+#include <QDesktopWidget>
 
 namespace Ui {
 class RemoteServer;
@@ -17,15 +20,20 @@ public:
     explicit RemoteServer(QWidget *parent = 0);
     ~RemoteServer();
 
+    void initializeTrayIcon();
+
 private:
     Ui::RemoteServer *ui;
     QUdpSocket *udpSocket;  // for establishing communication
     QTcpSocket *tcpSocket;  // for communication
 
+    QSystemTrayIcon *trayIcon;
+
     void connectionRequest();
     void transmissionRequest();
+    void setIcon(QString name);
 
-private slots:
+private slots:  
     void incomingUdpData();
     void deleteConnection();
     void socketConnected();

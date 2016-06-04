@@ -1,10 +1,13 @@
 #include "remoteserver.h"
 #include "ui_remoteserver.h"
 
+
 RemoteServer::RemoteServer(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::RemoteServer) {
     ui->setupUi(this);
+
+    trayIcon = nullptr;
 
     tcpSocket = nullptr;
     udpSocket = new QUdpSocket(this);
@@ -27,6 +30,23 @@ RemoteServer::~RemoteServer() {
     }
 
     delete ui;
+}
+
+void RemoteServer::initializeTrayIcon() {
+    QMenu *menu = new QMenu(this);
+    menu->addAction(tr("&Exit"), qApp, SLOT(quit()));
+    if(trayIcon == nullptr) {
+        trayIcon = new QSystemTrayIcon(this);
+        setIcon("black");
+        trayIcon->setVisible(true);
+    }
+    trayIcon->setContextMenu(menu);
+    trayIcon->show();
+
+}
+
+void RemoteServer::setIcon(QString name) {
+    trayIcon->setIcon(QIcon(":/" + name));
 }
 
 /*
@@ -82,8 +102,9 @@ void RemoteServer::deleteConnection() {
 
     tcpSocket->deleteLater();
     tcpSocket = nullptr;
+    setIcon("black");
 }
 
 void RemoteServer::socketConnected() {
-    QMessageBox::information(this, tr("Connection"), tr("Socket connected!"));
+    setIcon("green");
 }
