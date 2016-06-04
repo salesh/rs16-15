@@ -29,6 +29,9 @@ private:
     QUdpSocket *udpSocket;
     QTcpSocket *tcpSocket;
     QTcpServer *tcpServer;
+    bool shiftIndicator=false;
+    bool altIndicator=false;
+    bool ctrlIndicator=false;
 
     QHostAddress    m_hostAddress;
 
@@ -37,8 +40,13 @@ private slots:
     void newConnection();
     void deleteConnection();
     void incomingUdpData();
-    void incomingData();
     void initialize();
+    void newUi();
+    void keyboardPressed();
+    void keyboardReleased();
+    void shiftButtonIndicator();
+    void altButtonIndicator();
+    void ctrlButtonIndicator();
 };
 
 #endif // REMOTECLIENT_H

@@ -6,6 +6,7 @@
 
 QT       += core gui
 QT       += network
+QT       += core
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -23,3 +24,5 @@ FORMS    += remoteclient.ui
 QMAKE_CXXFLAGS += -std=c++11
 
 CONFIG += mobility
+
+DISTFILES +=

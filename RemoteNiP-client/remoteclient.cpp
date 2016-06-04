@@ -1,19 +1,27 @@
 #include "remoteclient.h"
 #include "ui_remoteclient.h"
+#include "QMessageBox"
 
 RemoteClient::RemoteClient(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::RemoteClient){
     ui->setupUi(this);
 
+    ui->inputWidget->hide();
+
     tcpSocket = nullptr;
 
     tcpServer = new QTcpServer(this);
     udpSocket = new QUdpSocket(this);
 
+
     connect(tcpServer, SIGNAL(newConnection()), this, SLOT(newConnection()));
     connect(ui->chooseNetworkButton, SIGNAL(clicked()), this, SLOT(sendConnectionRequest()));
+    connect(ui->chooseNetworkButton, SIGNAL(clicked()), this, SLOT(newUi()));
     connect(ui->searchButton,SIGNAL(clicked()),this,SLOT(initialize()));
+    connect(ui->altButton,SIGNAL(clicked()),this,SLOT(altButtonIndicator()));
+    connect(ui->shiftButton,SIGNAL(clicked()),this,SLOT(shiftButtonIndicator()));
+    connect(ui->ctrlButton,SIGNAL(clicked()),this,SLOT(ctrlButtonIndicator()));
 }
 
 RemoteClient::~RemoteClient(){
@@ -79,9 +87,6 @@ void RemoteClient::incomingUdpData(){
     }
 }
 
-void RemoteClient::incomingData(){
-    // TODO send a message to server
-}
 
 void RemoteClient::deleteConnection(){
     tcpSocket->abort();
@@ -89,5 +94,377 @@ void RemoteClient::deleteConnection(){
     tcpSocket = nullptr;
 }
 
+void RemoteClient::newUi(){
+// TODO Uncomment this!
+
+//    if(ui->chooseNetworkComboBox->currentText()==""){
+//        QMessageBox::information(this, "Fail","IP not selected!");
+//        return;
+//    }
+    ui->inputWidget->show();
+}
 
 
+//looks awful, but at least works(hope so)
+
+void RemoteClient::keyboardPressed(){
+    QPushButton *clickedButton=qobject_cast<QPushButton *>(sender());
+    quint8 mode1=1;
+    quint32 key;
+    quint32 modifiers=Qt::NoModifier;
+    bool keyPressed=true;
+    if(clickedButton->objectName()=="aButton"){
+        key=Qt::Key_A;
+    }
+    else if(clickedButton->objectName()=="bButton"){
+        key=Qt::Key_B;
+    }
+    else if(clickedButton->objectName()=="cButton"){
+        key=Qt::Key_C;
+    }
+    else if(clickedButton->objectName()=="dButton"){
+        key=Qt::Key_D;
+    }
+    else if(clickedButton->objectName()=="eButton"){
+        key=Qt::Key_E;
+    }
+    else if(clickedButton->objectName()=="fButton"){
+        key=Qt::Key_F;
+    }
+    else if(clickedButton->objectName()=="gButton"){
+        key=Qt::Key_G;
+    }
+    else if(clickedButton->objectName()=="hButton"){
+        key=Qt::Key_H;
+    }
+    else if(clickedButton->objectName()=="iButton"){
+        key=Qt::Key_I;
+    }
+    else if(clickedButton->objectName()=="jButton"){
+        key=Qt::Key_J;
+    }
+    else if(clickedButton->objectName()=="kButton"){
+        key=Qt::Key_K;
+    }
+    else if(clickedButton->objectName()=="lButton"){
+        key=Qt::Key_L;
+    }
+    else if(clickedButton->objectName()=="mButton"){
+        key=Qt::Key_M;
+    }
+    else if(clickedButton->objectName()=="nButton"){
+        key=Qt::Key_N;
+    }
+    else if(clickedButton->objectName()=="oButton"){
+        key=Qt::Key_O;
+    }
+    else if(clickedButton->objectName()=="pButton"){
+        key=Qt::Key_P;
+    }
+    else if(clickedButton->objectName()=="qButton"){
+        key=Qt::Key_Q;
+    }
+    else if(clickedButton->objectName()=="rButton"){
+        key=Qt::Key_R;
+    }
+    else if(clickedButton->objectName()=="sButton"){
+        key=Qt::Key_S;
+    }
+    else if(clickedButton->objectName()=="tButton"){
+        key=Qt::Key_T;
+    }
+    else if(clickedButton->objectName()=="uButton"){
+        key=Qt::Key_U;
+    }
+    else if(clickedButton->objectName()=="vButton"){
+        key=Qt::Key_V;
+    }
+    else if(clickedButton->objectName()=="wButton"){
+        key=Qt::Key_W;
+    }
+    else if(clickedButton->objectName()=="xButton"){
+        key=Qt::Key_X;
+    }
+    else if(clickedButton->objectName()=="yButton"){
+        key=Qt::Key_Y;
+    }
+    else if(clickedButton->objectName()=="zButton"){
+        key=Qt::Key_Z;
+    }
+    else if(clickedButton->objectName()=="_0Button"){
+        key=Qt::Key_0;
+    }
+    else if(clickedButton->objectName()=="_1Button"){
+        key=Qt::Key_1;
+    }
+    else if(clickedButton->objectName()=="_2Button"){
+        key=Qt::Key_2;
+    }
+    else if(clickedButton->objectName()=="_3Button"){
+        key=Qt::Key_3;
+    }
+    else if(clickedButton->objectName()=="_4Button"){
+        key=Qt::Key_4;
+    }
+    else if(clickedButton->objectName()=="_5Button"){
+        key=Qt::Key_5;
+    }
+    else if(clickedButton->objectName()=="_6Button"){
+        key=Qt::Key_6;
+    }
+    else if(clickedButton->objectName()=="_7Button"){
+        key=Qt::Key_7;
+    }
+    else if(clickedButton->objectName()=="_8Button"){
+        key=Qt::Key_8;
+    }
+    else if(clickedButton->objectName()=="_9Button"){
+        key=Qt::Key_9;
+    }
+    else if(clickedButton->objectName()=="slashButton"){
+        key=Qt::Key_Slash;
+    }
+    else if(clickedButton->objectName()=="backslashButton"){
+        key=Qt::Key_Backslash;
+    }
+    else if(clickedButton->objectName()=="comaButton"){
+        key=Qt::Key_Comma;
+    }
+    else if(clickedButton->objectName()=="dotNetButton"){
+        key=Qt::Key_Period;
+    }
+    else if(clickedButton->objectName()=="eqButton"){
+        key=Qt::Key_Equal;
+    }
+    else if(clickedButton->objectName()=="cbButton"){
+        key=Qt::Key_BracketRight;
+    }
+    else if(clickedButton->objectName()=="obButton"){
+        key=Qt::Key_BracketLeft;
+    }
+    else if(clickedButton->objectName()=="semicolonButton"){
+        key=Qt::Key_Semicolon;
+    }
+    else if(clickedButton->objectName()=="dashButton"){
+        key=Qt::Key_Minus;
+    }
+    else if(clickedButton->objectName()=="upperComaButton"){
+        key=Qt::Key_Apostrophe;
+    }
+    else if(clickedButton->objectName()=="spaceButton"){
+        key=Qt::Key_Space;
+    }
+    else if(clickedButton->objectName()=="backspaceButton"){
+        key=Qt::Key_Backspace;
+    }
+
+    if(shiftIndicator==true)
+        modifiers=modifiers & Qt::ShiftModifier;
+    if(ctrlIndicator==true)
+        modifiers=modifiers & Qt::ControlModifier;
+    if(altIndicator==true)
+        modifiers=modifiers & Qt::AltModifier;
+
+    QByteArray data;
+    QDataStream streamOut(&data, QIODevice::WriteOnly);
+    streamOut << mode1;
+    streamOut << key;
+    streamOut << modifiers;
+    streamOut << keyPressed;
+
+    //udpSocket->writeDatagram(data, tcpSocket->peerAddress(), 5600);
+
+}
+
+void RemoteClient::keyboardReleased(){
+    QPushButton *clickedButton=qobject_cast<QPushButton *>(sender());
+    quint32 mode1=1;
+    quint32 key;
+    quint32 modifiers=Qt::NoModifier;
+    bool keyPressed=false;
+
+
+    if(clickedButton->objectName()=="aButton"){
+        key=Qt::Key_A;
+    }
+    else if(clickedButton->objectName()=="bButton"){
+        key=Qt::Key_B;
+    }
+    else if(clickedButton->objectName()=="cButton"){
+        key=Qt::Key_C;
+    }
+    else if(clickedButton->objectName()=="dButton"){
+        key=Qt::Key_D;
+    }
+    else if(clickedButton->objectName()=="eButton"){
+        key=Qt::Key_E;
+    }
+    else if(clickedButton->objectName()=="fButton"){
+        key=Qt::Key_F;
+    }
+    else if(clickedButton->objectName()=="gButton"){
+        key=Qt::Key_G;
+    }
+    else if(clickedButton->objectName()=="hButton"){
+        key=Qt::Key_H;
+    }
+    else if(clickedButton->objectName()=="iButton"){
+        key=Qt::Key_I;
+    }
+    else if(clickedButton->objectName()=="jButton"){
+        key=Qt::Key_J;
+    }
+    else if(clickedButton->objectName()=="kButton"){
+        key=Qt::Key_K;
+    }
+    else if(clickedButton->objectName()=="lButton"){
+        key=Qt::Key_L;
+    }
+    else if(clickedButton->objectName()=="mButton"){
+        key=Qt::Key_M;
+    }
+    else if(clickedButton->objectName()=="nButton"){
+        key=Qt::Key_N;
+    }
+    else if(clickedButton->objectName()=="oButton"){
+        key=Qt::Key_O;
+    }
+    else if(clickedButton->objectName()=="pButton"){
+        key=Qt::Key_P;
+    }
+    else if(clickedButton->objectName()=="qButton"){
+        key=Qt::Key_Q;
+    }
+    else if(clickedButton->objectName()=="rButton"){
+        key=Qt::Key_R;
+    }
+    else if(clickedButton->objectName()=="sButton"){
+        key=Qt::Key_S;
+    }
+    else if(clickedButton->objectName()=="tButton"){
+        key=Qt::Key_T;
+    }
+    else if(clickedButton->objectName()=="uButton"){
+        key=Qt::Key_U;
+    }
+    else if(clickedButton->objectName()=="vButton"){
+        key=Qt::Key_V;
+    }
+    else if(clickedButton->objectName()=="wButton"){
+        key=Qt::Key_W;
+    }
+    else if(clickedButton->objectName()=="xButton"){
+        key=Qt::Key_X;
+    }
+    else if(clickedButton->objectName()=="yButton"){
+        key=Qt::Key_Y;
+    }
+    else if(clickedButton->objectName()=="zButton"){
+        key=Qt::Key_Z;
+    }
+    else if(clickedButton->objectName()=="_0Button"){
+        key=Qt::Key_0;
+    }
+    else if(clickedButton->objectName()=="_1Button"){
+        key=Qt::Key_1;
+    }
+    else if(clickedButton->objectName()=="_2Button"){
+        key=Qt::Key_2;
+    }
+    else if(clickedButton->objectName()=="_3Button"){
+        key=Qt::Key_3;
+    }
+    else if(clickedButton->objectName()=="_4Button"){
+        key=Qt::Key_4;
+    }
+    else if(clickedButton->objectName()=="_5Button"){
+        key=Qt::Key_5;
+    }
+    else if(clickedButton->objectName()=="_6Button"){
+        key=Qt::Key_6;
+    }
+    else if(clickedButton->objectName()=="_7Button"){
+        key=Qt::Key_7;
+    }
+    else if(clickedButton->objectName()=="_8Button"){
+        key=Qt::Key_8;
+    }
+    else if(clickedButton->objectName()=="_9Button"){
+        key=Qt::Key_9;
+    }
+    else if(clickedButton->objectName()=="slashButton"){
+        key=Qt::Key_Slash;
+    }
+    else if(clickedButton->objectName()=="backslashButton"){
+        key=Qt::Key_Backslash;
+    }
+    else if(clickedButton->objectName()=="comaButton"){
+        key=Qt::Key_Comma;
+    }
+    else if(clickedButton->objectName()=="dotNetButton"){
+        key=Qt::Key_Period;
+    }
+    else if(clickedButton->objectName()=="eqButton"){
+        key=Qt::Key_Equal;
+    }
+    else if(clickedButton->objectName()=="cbButton"){
+        key=Qt::Key_BracketRight;
+    }
+    else if(clickedButton->objectName()=="obButton"){
+        key=Qt::Key_BracketLeft;
+    }
+    else if(clickedButton->objectName()=="semicolonButton"){
+        key=Qt::Key_Semicolon;
+    }
+    else if(clickedButton->objectName()=="dashButton"){
+        key=Qt::Key_Minus;
+    }
+    else if(clickedButton->objectName()=="upperComaButton"){
+        key=Qt::Key_Apostrophe;
+    }
+    else if(clickedButton->objectName()=="spaceButton"){
+        key=Qt::Key_Space;
+    }
+    else if(clickedButton->objectName()=="backspaceButton"){
+        key=Qt::Key_Backspace;
+    }
+
+    if(shiftIndicator==true)
+        modifiers=modifiers | Qt::ShiftModifier;
+    if(ctrlIndicator==true)
+        modifiers=modifiers | Qt::ControlModifier;
+    if(altIndicator==true)
+        modifiers=modifiers | Qt::AltModifier;
+
+    QByteArray data;
+    QDataStream streamOut(&data, QIODevice::WriteOnly);
+    streamOut << mode1;
+    streamOut << key;
+    streamOut << modifiers;
+    streamOut << keyPressed;
+
+    udpSocket->writeDatagram(data, tcpSocket->peerAddress(), 5600);
+
+}
+
+
+ void RemoteClient::shiftButtonIndicator(){
+     if(shiftIndicator==true)
+         shiftIndicator=false;
+     else
+         shiftIndicator=true;
+ }
+
+ void RemoteClient::altButtonIndicator(){
+     if(altIndicator==true)
+         altIndicator=false;
+     else
+         altIndicator=true;
+ }
+
+ void RemoteClient::ctrlButtonIndicator(){
+     if(ctrlIndicator==true)
+         ctrlIndicator=false;
+     else
+         ctrlIndicator=true;
+ }
