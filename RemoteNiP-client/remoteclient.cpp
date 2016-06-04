@@ -63,10 +63,8 @@ void RemoteClient::newConnection(){
         tcpSocket = tcpServer->nextPendingConnection();
 
         connect(tcpSocket, SIGNAL(disconnected()), this, SLOT(deleteConnection()));
-        connect(tcpSocket, SIGNAL(readyRead()), this, SLOT(incomingData()));
     }
 }
-
 
 
 void RemoteClient::incomingUdpData(){
@@ -259,11 +257,11 @@ void RemoteClient::keyboardPressed(){
     }
 
     if(shiftIndicator==true)
-        modifiers=modifiers & Qt::ShiftModifier;
+        modifiers=modifiers | Qt::ShiftModifier;
     if(ctrlIndicator==true)
-        modifiers=modifiers & Qt::ControlModifier;
+        modifiers=modifiers | Qt::ControlModifier;
     if(altIndicator==true)
-        modifiers=modifiers & Qt::AltModifier;
+        modifiers=modifiers | Qt::AltModifier;
 
     QByteArray data;
     QDataStream streamOut(&data, QIODevice::WriteOnly);
@@ -272,13 +270,13 @@ void RemoteClient::keyboardPressed(){
     streamOut << modifiers;
     streamOut << keyPressed;
 
-    //udpSocket->writeDatagram(data, tcpSocket->peerAddress(), 5600);
+    tcpSocket->write(data);
 
 }
 
 void RemoteClient::keyboardReleased(){
     QPushButton *clickedButton=qobject_cast<QPushButton *>(sender());
-    quint32 mode1=1;
+    quint8 mode1=1;
     quint32 key;
     quint32 modifiers=Qt::NoModifier;
     bool keyPressed=false;
@@ -443,10 +441,9 @@ void RemoteClient::keyboardReleased(){
     streamOut << modifiers;
     streamOut << keyPressed;
 
-    udpSocket->writeDatagram(data, tcpSocket->peerAddress(), 5600);
+    tcpSocket->write(data);
 
 }
-
 
  void RemoteClient::shiftButtonIndicator(){
      if(shiftIndicator==true)

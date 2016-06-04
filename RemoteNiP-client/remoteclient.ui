@@ -995,7 +995,7 @@
   </connection>
   <connection>
    <sender>lButton</sender>
-   <signal>released()</signal>
+   <signal>pressed()</signal>
    <receiver>RemoteClient</receiver>
    <slot>keyboardPressed()</slot>
    <hints>

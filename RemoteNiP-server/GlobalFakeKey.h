@@ -294,14 +294,12 @@
 #define QTOPIAXK_Hangup 0x1100060F
 #define QTOPIAXK_Flip 0x11000610
 
-
-
-
+#define XK_Space 0x020
 
 
 
 static const unsigned int KeyTbl[] ={
-
+    XK_Space,                      Qt::Key_Space,
     XK_Escape,                    Qt::Key_Escape,
     XK_Tab,                        Qt::Key_Tab,
     XK_ISO_Left_Tab,               Qt::Key_Backtab,
@@ -370,7 +368,6 @@ static const unsigned int KeyTbl[] ={
     XK_F18,      Qt::Key_F18,
     XK_F19,      Qt::Key_F19,
     XK_F20,      Qt::Key_F20,
-
 
     // numeric and function keypad keys
     //XK_KP_Space, Qt::Key_Space,

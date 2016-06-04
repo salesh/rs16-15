@@ -1,6 +1,6 @@
 #include "remoteserver.h"
 #include "ui_remoteserver.h"
-
+#include "GlobalFakeKey.h"
 
 RemoteServer::RemoteServer(QWidget *parent) :
     QMainWindow(parent),
@@ -57,8 +57,6 @@ void RemoteServer::setIcon(QString name) {
 void RemoteServer::incomingUdpData() {
     if(tcpSocket == nullptr)
         connectionRequest();
-    else
-        transmissionRequest();
 }
 
 void RemoteServer::connectionRequest() {
@@ -93,7 +91,20 @@ void RemoteServer::connectionRequest() {
 }
 
 void RemoteServer::transmissionRequest() {
-    // TODO recieve a message from client
+    QByteArray datagram = tcpSocket->readAll();
+
+    QDataStream streamIn(&datagram, QIODevice::ReadOnly);
+    quint8 mode1;
+
+    streamIn >> mode1;
+
+    switch(mode1) {
+    case 1:
+        incomingKey(datagram);
+        break;
+    default:
+        ;
+    }
 }
 
 void RemoteServer::deleteConnection() {
@@ -107,4 +118,21 @@ void RemoteServer::deleteConnection() {
 
 void RemoteServer::socketConnected() {
     setIcon("green");
+    connect(tcpSocket, SIGNAL(readyRead()), this, SLOT(transmissionRequest()));
+}
+
+void RemoteServer::incomingKey(QByteArray data) {
+    quint8 mode1;
+    quint32 key, modifiers;
+    bool keyPressed;
+
+    QDataStream streamIn(&data, QIODevice::ReadOnly);
+    streamIn >> mode1;
+    streamIn >> key;
+    streamIn >> modifiers;
+    streamIn >> keyPressed;
+
+    GlobalFakeKey fakeKey;
+    fakeKey.sendModifiers((Qt::KeyboardModifier)modifiers, keyPressed);
+    fakeKey.sendKey((Qt::Key)key, keyPressed);
 }

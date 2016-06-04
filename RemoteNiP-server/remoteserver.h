@@ -30,10 +30,11 @@ private:
     QSystemTrayIcon *trayIcon;
 
     void connectionRequest();
-    void transmissionRequest();
     void setIcon(QString name);
+    void incomingKey(QByteArray data);
 
-private slots:  
+private slots:
+    void transmissionRequest();
     void incomingUdpData();
     void deleteConnection();
     void socketConnected();

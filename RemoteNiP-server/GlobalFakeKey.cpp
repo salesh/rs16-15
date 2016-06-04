@@ -1,4 +1,5 @@
 #include"GlobalFakeKey.h"
+#include <iostream>
 
 class FakeKeyPrivate {
 public:
@@ -51,14 +52,13 @@ void GlobalFakeKey::sendKey(Qt::Key key, bool down){
         //finding native code of the key
         if((key <0x1000 && key>=0x20) || (key>=Qt::Key_0 && key<=Qt::Key_9)){
             keySym=QChar(key).unicode();
-            KeyCode keyCode =XKeysymToKeycode(display, keySym);
+            KeyCode keyCode = XKeysymToKeycode(display, keySym);
             int symsPerKeycode;
             KeySym *keyMap=XGetKeyboardMapping(display, keyCode, 1, &symsPerKeycode);
 
             if(keySym==keyMap[1] && key!=keyMap[0]){ //to check !
                 sendModifiers(Qt::ShiftModifier, true);
                 shiftSet=true;
-
             }
             else if(keySym==keyMap[4]){
                 sendModifiers(Qt::AltModifier, true);
