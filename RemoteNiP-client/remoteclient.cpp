@@ -495,10 +495,10 @@ void RemoteClient::shiftButtonIndicator(){
       quint8 key;
       bool keyPressed = true;
       if(clickedButton->objectName()=="leftClicked"){
-          key = Qt::LeftButton;
+          key = 1;
       }
       else if(clickedButton->objectName()=="rightClicked"){
-          key = Qt::RightButton;
+          key = 2;
       }
 
       quint8 mode1 = 2;
@@ -519,10 +519,10 @@ void RemoteClient::shiftButtonIndicator(){
       bool keyPressed = false;
 
       if(clickedButton->objectName()=="leftClick"){
-          key = Qt::LeftButton;
+          key = 1;
       }
       else if(clickedButton->objectName()=="rightClick"){
-          key = Qt::RightButton;
+          key = 2;
       }
 
       quint8 mode1 = 2;
