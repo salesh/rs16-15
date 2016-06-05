@@ -1,7 +1,6 @@
 #include "remoteserver.h"
 #include "ui_remoteserver.h"
 #include "GlobalFakeKey.h"
-#include <QDebug>
 
 RemoteServer::RemoteServer(QWidget *parent) :
     QMainWindow(parent),
@@ -202,7 +201,7 @@ void RemoteServer::mouseClick(QByteArray data) {
     streamIn >> keyPressed;
 
     Qt::MouseButton mouseButton = Qt::NoButton;
-    qDebug() << key;
+
     if(key == 1)
         mouseButton = Qt::LeftButton;
     else if(key == 2)

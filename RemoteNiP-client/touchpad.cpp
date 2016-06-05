@@ -1,5 +1,5 @@
 #include "touchpad.h"
-#include <QDebug>
+
 
 bool TouchPad::viewportEvent(QEvent *event) {
     switch(event->type()) {

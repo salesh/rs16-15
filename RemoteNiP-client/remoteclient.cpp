@@ -1,7 +1,6 @@
 #include "remoteclient.h"
 #include "ui_remoteclient.h"
 #include "QMessageBox"
-#include <QDebug>
 
 RemoteClient::RemoteClient(QWidget *parent) :
     QMainWindow(parent),
@@ -497,7 +496,7 @@ void RemoteClient::shiftButtonIndicator(){
       quint8 key;
       bool keyPressed = true;
       if(clickedButton->objectName()=="leftClicked"){
-          key = (quint8)1;
+          key = 1;
       }
       else if(clickedButton->objectName()=="rightClicked"){
           key = (quint8)2;
@@ -520,10 +519,10 @@ void RemoteClient::shiftButtonIndicator(){
       bool keyPressed = false;
 
       if(clickedButton->objectName()=="leftClicked"){
-          key = (quint8)1;
+          key = 1;
       }
       else if(clickedButton->objectName()=="rightClicked"){
-          key = (quint8)2;
+          key = 2;
       }
 
       quint8 mode1 = 2;
@@ -534,7 +533,7 @@ void RemoteClient::shiftButtonIndicator(){
       streamOut << mode2;
       streamOut << key;
       streamOut << keyPressed;
-      qDebug() << key;
+
       udpSocket->writeDatagram(data, tcpSocket->peerAddress(),5600);
   }
 
