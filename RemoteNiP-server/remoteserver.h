@@ -9,6 +9,7 @@
 #include <QStyle>
 #include <QDesktopWidget>
 
+
 namespace Ui {
 class RemoteServer;
 }
@@ -26,12 +27,15 @@ private:
     Ui::RemoteServer *ui;
     QUdpSocket *udpSocket;  // for establishing communication
     QTcpSocket *tcpSocket;  // for communication
-
+    QPointF cursorPos;
     QSystemTrayIcon *trayIcon;
 
     void connectionRequest();
     void setIcon(QString name);
     void incomingKey(QByteArray data);
+    void incomingMouse();
+    void mouseMove(QByteArray data);
+    void mouseClick(QByteArray data);
 
 private slots:
     void transmissionRequest();

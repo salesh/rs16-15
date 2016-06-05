@@ -1,5 +1,4 @@
 #include"GlobalFakeKey.h"
-#include <iostream>
 
 class FakeKeyPrivate {
 public:
@@ -19,7 +18,6 @@ GlobalFakeKey::GlobalFakeKey(QObject * parent):QObject(parent), _d(new FakeKeyPr
 GlobalFakeKey::~GlobalFakeKey(){
 
 }
-
 
 //We need to find out which key we get
 
@@ -112,34 +110,9 @@ void GlobalFakeKey::sendButton(Qt::MouseButton button, bool down){
         nativeButton=2;
     
     XTestFakeButtonEvent(_d->display, nativeButton, down, 0);
+    XFlush(_d->display);
     GlobalFakeKey::wait(1);
 }
-
-void GlobalFakeKey::sendScroll(int direction, int delta, double acceleration){
-    if(!(_d->display))
-        return;
-    
-    int button=6;
-    if(direction==1){
-        if(delta<0)
-            button=6;
-        else if(delta>0)
-            button=7;
-    }
-    else{
-        if(delta<0)
-            button=4;
-        else if(delta>0)
-            button=5;
-    }
-    for(int i=0; i<qAbs(delta*acceleration); i++){
-        XTestFakeButtonEvent(_d->display, button, true, 0);
-        XTestFakeButtonEvent(_d->display, button, false, 0);
-    }
-    GlobalFakeKey::wait(1);
-    
-}
-
 
 
 Qt::KeyboardModifier const GlobalFakeKey::AllModifiers[] =

@@ -1,6 +1,7 @@
 #include "remoteserver.h"
 #include "ui_remoteserver.h"
 #include "GlobalFakeKey.h"
+#include <QDebug>
 
 RemoteServer::RemoteServer(QWidget *parent) :
     QMainWindow(parent),
@@ -57,6 +58,9 @@ void RemoteServer::setIcon(QString name) {
 void RemoteServer::incomingUdpData() {
     if(tcpSocket == nullptr)
         connectionRequest();
+    else {
+        incomingMouse();
+    }
 }
 
 void RemoteServer::connectionRequest() {
@@ -135,4 +139,76 @@ void RemoteServer::incomingKey(QByteArray data) {
     GlobalFakeKey fakeKey;
     fakeKey.sendModifiers((Qt::KeyboardModifier)modifiers, keyPressed);
     fakeKey.sendKey((Qt::Key)key, keyPressed);
+}
+
+void RemoteServer::incomingMouse() {
+    QByteArray datagram;
+    QHostAddress addr;
+    datagram.resize(udpSocket->pendingDatagramSize());
+
+    udpSocket->readDatagram(datagram.data(), datagram.size(), &addr);
+
+    if(addr != tcpSocket->peerAddress())
+        return;
+
+    QDataStream streamIn(&datagram, QIODevice::ReadOnly);
+    quint8 mode1;
+    quint8 mode2;
+
+    streamIn >> mode1;
+    streamIn >> mode2;
+
+    if(mode1 == 2 && mode2 == 0) {
+        mouseMove(datagram);
+    } else if( mode1 ==2 && mode2 == 1) {
+        mouseClick(datagram);
+    }
+
+}
+
+void RemoteServer::mouseMove(QByteArray data) {
+    QDataStream streamIn(&data, QIODevice::ReadOnly);
+    quint8 mode1;
+    quint8 mode2;
+    QPointF delta;
+
+    streamIn >> mode1;
+    streamIn >> mode2;
+    streamIn >> delta;
+
+    double x = delta.x();
+    double y = delta.y();
+
+    if(QCursor::pos() != QPoint(qRound(cursorPos.x()), qRound(cursorPos.y())))
+        cursorPos = QCursor::pos();
+
+    cursorPos.setX(cursorPos.x() + x);
+    cursorPos.setY(cursorPos.y() + y);
+
+    QCursor::setPos(QPoint(qRound(cursorPos.x()),qRound(cursorPos.y())));
+}
+
+void RemoteServer::mouseClick(QByteArray data) {
+    QDataStream streamIn(&data, QIODevice::ReadOnly);
+
+    quint8 mode1;
+    quint8 mode2;
+    quint8 key;
+    bool keyPressed;
+
+    streamIn >> mode1;
+    streamIn >> mode2;
+    streamIn >> key;
+    streamIn >> keyPressed;
+
+    Qt::MouseButton mouseButton = Qt::NoButton;
+    qDebug() << key;
+    if(key == 1)
+        mouseButton = Qt::LeftButton;
+    else if(key == 2)
+        mouseButton = Qt::RightButton;
+
+    GlobalFakeKey fakeKey;
+    fakeKey.sendButton(mouseButton, keyPressed);
+
 }

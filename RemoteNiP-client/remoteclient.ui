@@ -909,27 +909,27 @@
      <widget class="QPushButton" name="leftClicked">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>560</y>
-        <width>141</width>
-        <height>101</height>
+        <x>20</x>
+        <y>550</y>
+        <width>211</width>
+        <height>111</height>
        </rect>
       </property>
       <property name="text">
-       <string>Left click</string>
+       <string/>
       </property>
      </widget>
      <widget class="QPushButton" name="rightClicked">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>560</y>
-        <width>141</width>
-        <height>101</height>
+        <x>260</x>
+        <y>550</y>
+        <width>211</width>
+        <height>111</height>
        </rect>
       </property>
       <property name="text">
-       <string>Right click</string>
+       <string/>
       </property>
      </widget>
     </widget>

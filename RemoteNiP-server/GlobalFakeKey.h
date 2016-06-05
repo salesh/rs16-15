@@ -4,6 +4,7 @@
 #include<QObject>
 #include<QKeySequence>
 #include<QTime>
+#include <QDebug>
 #include <X11/keysym.h>
 #include <X11/XF86keysym.h>
 #include <X11/keysymdef.h>

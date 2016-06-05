@@ -1,6 +1,7 @@
 #include "remoteclient.h"
 #include "ui_remoteclient.h"
 #include "QMessageBox"
+#include <QDebug>
 
 RemoteClient::RemoteClient(QWidget *parent) :
     QMainWindow(parent),
@@ -93,6 +94,7 @@ void RemoteClient::deleteConnection(){
     tcpSocket->deleteLater();
     tcpSocket = nullptr;
     ui->inputWidget->hide();
+    ui->chooseNetworkComboBox->clear();
     QMessageBox::information(this, "Kick!","Disconnected!");
 }
 
@@ -495,10 +497,10 @@ void RemoteClient::shiftButtonIndicator(){
       quint8 key;
       bool keyPressed = true;
       if(clickedButton->objectName()=="leftClicked"){
-          key = 1;
+          key = (quint8)1;
       }
       else if(clickedButton->objectName()=="rightClicked"){
-          key = 2;
+          key = (quint8)2;
       }
 
       quint8 mode1 = 2;
@@ -509,7 +511,6 @@ void RemoteClient::shiftButtonIndicator(){
       streamOut << mode2;
       streamOut << key;
       streamOut << keyPressed;
-
       udpSocket->writeDatagram(data, tcpSocket->peerAddress(),5600);
   }
 
@@ -518,11 +519,11 @@ void RemoteClient::shiftButtonIndicator(){
       quint8 key;
       bool keyPressed = false;
 
-      if(clickedButton->objectName()=="leftClick"){
-          key = 1;
+      if(clickedButton->objectName()=="leftClicked"){
+          key = (quint8)1;
       }
-      else if(clickedButton->objectName()=="rightClick"){
-          key = 2;
+      else if(clickedButton->objectName()=="rightClicked"){
+          key = (quint8)2;
       }
 
       quint8 mode1 = 2;
@@ -533,7 +534,7 @@ void RemoteClient::shiftButtonIndicator(){
       streamOut << mode2;
       streamOut << key;
       streamOut << keyPressed;
-
+      qDebug() << key;
       udpSocket->writeDatagram(data, tcpSocket->peerAddress(),5600);
   }
 
