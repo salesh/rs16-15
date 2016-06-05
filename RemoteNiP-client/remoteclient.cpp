@@ -15,6 +15,8 @@ RemoteClient::RemoteClient(QWidget *parent) :
     udpSocket = new QUdpSocket(this);
 
 
+    ui->scrollArea->setViewport(ui->widget);
+    connect(ui->scrollArea, SIGNAL(sendMove(const QPointF&)), this,SLOT(sendMouseMove(const QPointF&)));
     connect(tcpServer, SIGNAL(newConnection()), this, SLOT(newConnection()));
     connect(ui->chooseNetworkButton, SIGNAL(clicked()), this, SLOT(sendConnectionRequest()));
     connect(ui->chooseNetworkButton, SIGNAL(clicked()), this, SLOT(newUi()));
@@ -486,3 +488,71 @@ void RemoteClient::shiftButtonIndicator(){
      }
  }
 
+
+
+  void RemoteClient::sendMousePress(){
+      QPushButton *clickedButton=qobject_cast<QPushButton *>(sender());
+      quint8 key;
+      bool keyPressed = true;
+      if(clickedButton->objectName()=="leftClicked"){
+          key = Qt::LeftButton;
+      }
+      else if(clickedButton->objectName()=="rightClicked"){
+          key = Qt::RightButton;
+      }
+
+      quint8 mode1 = 2;
+      quint8 mode2 = 1;
+      QByteArray data;
+      QDataStream streamOut(&data, QIODevice::WriteOnly);
+      streamOut << mode1;
+      streamOut << mode2;
+      streamOut << key;
+      streamOut << keyPressed;
+
+      udpSocket->writeDatagram(data, tcpSocket->peerAddress(),5600);
+  }
+
+  void RemoteClient::sendMouseRelease(){
+      QPushButton *clickedButton=qobject_cast<QPushButton *>(sender());
+      quint8 key;
+      bool keyPressed = false;
+
+      if(clickedButton->objectName()=="leftClick"){
+          key = Qt::LeftButton;
+      }
+      else if(clickedButton->objectName()=="rightClick"){
+          key = Qt::RightButton;
+      }
+
+      quint8 mode1 = 2;
+      quint8 mode2 = 1;
+      QByteArray data;
+      QDataStream streamOut(&data, QIODevice::WriteOnly);
+      streamOut << mode1;
+      streamOut << mode2;
+      streamOut << key;
+      streamOut << keyPressed;
+
+      udpSocket->writeDatagram(data, tcpSocket->peerAddress(),5600);
+  }
+
+  void RemoteClient::sendMouseMove(const QPointF &delta)
+  {
+
+      if(delta == QPointF(0,0))
+              return;
+
+      quint8 mode1 = 2;
+      quint8 mode2 = 0;
+
+      QByteArray data;
+      QDataStream streamOut(&data, QIODevice::WriteOnly);
+
+      streamOut << mode1;
+      streamOut << mode2;
+      streamOut << delta;
+
+      udpSocket->writeDatagram(data, tcpSocket->peerAddress(), 5600);
+
+  }

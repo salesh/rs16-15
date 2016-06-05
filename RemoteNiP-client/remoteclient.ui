@@ -84,7 +84,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="keyboardTab">
      <attribute name="title">
@@ -870,6 +870,68 @@
      <attribute name="title">
       <string>Mouse</string>
      </attribute>
+     <widget class="TouchPad" name="scrollArea">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>451</width>
+        <height>511</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>449</width>
+         <height>509</height>
+        </rect>
+       </property>
+       <widget class="QWidget" name="widget" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>451</width>
+          <height>511</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="leftClicked">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>560</y>
+        <width>141</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Left click</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="rightClicked">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>560</y>
+        <width>141</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Right click</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <zorder>chooseNetworkComboBox</zorder>
@@ -879,6 +941,14 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TouchPad</class>
+   <extends>QScrollArea</extends>
+   <header location="global">touchpad.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
@@ -888,7 +958,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>24</x>
+     <x>184</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -904,7 +974,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>264</x>
+     <x>424</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -920,7 +990,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
+     <x>344</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -936,7 +1006,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>424</x>
+     <x>584</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -952,7 +1022,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>104</x>
+     <x>264</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -968,7 +1038,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>104</x>
+     <x>264</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -984,7 +1054,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>384</x>
+     <x>544</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1000,7 +1070,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
+     <x>304</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1016,7 +1086,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
+     <x>344</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1032,7 +1102,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>224</x>
+     <x>384</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1048,7 +1118,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>304</x>
+     <x>464</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1064,7 +1134,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>264</x>
+     <x>424</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1080,7 +1150,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>304</x>
+     <x>464</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1096,7 +1166,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
+     <x>504</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1112,7 +1182,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
+     <x>504</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1128,7 +1198,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>304</x>
+     <x>464</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1144,7 +1214,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
+     <x>504</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1160,7 +1230,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>384</x>
+     <x>544</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1176,7 +1246,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>24</x>
+     <x>184</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1192,7 +1262,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
+     <x>304</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1208,7 +1278,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>64</x>
+     <x>224</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1224,7 +1294,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
+     <x>344</x>
      <y>737</y>
     </hint>
     <hint type="destinationlabel">
@@ -1240,7 +1310,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
+     <x>344</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1256,7 +1326,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>264</x>
+     <x>424</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1272,7 +1342,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>224</x>
+     <x>384</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1288,7 +1358,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>64</x>
+     <x>224</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1304,7 +1374,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
+     <x>304</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1320,7 +1390,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>224</x>
+     <x>384</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1336,7 +1406,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>104</x>
+     <x>264</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1352,7 +1422,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>24</x>
+     <x>184</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1368,7 +1438,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>264</x>
+     <x>424</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1384,7 +1454,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
+     <x>344</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1400,7 +1470,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>424</x>
+     <x>584</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1416,7 +1486,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>104</x>
+     <x>264</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1432,7 +1502,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>384</x>
+     <x>544</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1448,7 +1518,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
+     <x>304</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1464,7 +1534,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
+     <x>344</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1480,7 +1550,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>104</x>
+     <x>264</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1496,7 +1566,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>304</x>
+     <x>464</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1512,7 +1582,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>304</x>
+     <x>464</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1528,7 +1598,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>264</x>
+     <x>424</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1544,7 +1614,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
+     <x>504</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1560,7 +1630,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
+     <x>504</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1576,7 +1646,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>304</x>
+     <x>464</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1592,7 +1662,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>384</x>
+     <x>544</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1608,7 +1678,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
+     <x>504</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1624,7 +1694,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>24</x>
+     <x>184</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1640,7 +1710,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
+     <x>344</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1656,7 +1726,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>64</x>
+     <x>224</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1672,7 +1742,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
+     <x>304</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1688,7 +1758,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>64</x>
+     <x>224</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1704,7 +1774,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>264</x>
+     <x>424</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1720,7 +1790,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>224</x>
+     <x>384</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1736,7 +1806,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>104</x>
+     <x>264</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -1752,7 +1822,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>224</x>
+     <x>384</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -1768,7 +1838,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>224</x>
+     <x>384</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1784,7 +1854,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
+     <x>304</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -1800,7 +1870,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
+     <x>344</x>
      <y>737</y>
     </hint>
     <hint type="destinationlabel">
@@ -1816,7 +1886,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>384</x>
+     <x>544</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -1832,7 +1902,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>24</x>
+     <x>184</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -1848,7 +1918,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>64</x>
+     <x>224</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -1864,7 +1934,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>104</x>
+     <x>264</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -1880,7 +1950,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
+     <x>304</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -1896,7 +1966,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
+     <x>344</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -1912,7 +1982,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>224</x>
+     <x>384</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -1928,7 +1998,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>264</x>
+     <x>424</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -1944,7 +2014,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>304</x>
+     <x>464</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -1960,7 +2030,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
+     <x>504</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -1976,7 +2046,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>424</x>
+     <x>584</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -1992,7 +2062,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>464</x>
+     <x>624</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -2008,7 +2078,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>424</x>
+     <x>584</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -2024,7 +2094,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>464</x>
+     <x>624</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -2040,7 +2110,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>464</x>
+     <x>624</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -2056,7 +2126,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>424</x>
+     <x>584</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -2072,7 +2142,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>384</x>
+     <x>544</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -2088,7 +2158,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
+     <x>504</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -2104,7 +2174,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>264</x>
+     <x>424</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -2120,7 +2190,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>304</x>
+     <x>464</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -2136,7 +2206,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>224</x>
+     <x>384</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -2152,7 +2222,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
+     <x>344</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -2168,7 +2238,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
+     <x>304</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -2184,7 +2254,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>104</x>
+     <x>264</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -2200,7 +2270,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>64</x>
+     <x>224</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -2216,7 +2286,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>24</x>
+     <x>184</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -2232,7 +2302,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>384</x>
+     <x>544</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -2248,7 +2318,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>424</x>
+     <x>584</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -2264,7 +2334,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>464</x>
+     <x>624</x>
      <y>577</y>
     </hint>
     <hint type="destinationlabel">
@@ -2280,7 +2350,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>424</x>
+     <x>584</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -2296,7 +2366,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>464</x>
+     <x>624</x>
      <y>617</y>
     </hint>
     <hint type="destinationlabel">
@@ -2312,7 +2382,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>424</x>
+     <x>584</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -2328,7 +2398,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>384</x>
+     <x>544</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -2344,7 +2414,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>464</x>
+     <x>624</x>
      <y>657</y>
     </hint>
     <hint type="destinationlabel">
@@ -2360,7 +2430,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>464</x>
+     <x>624</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -2376,7 +2446,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>464</x>
+     <x>624</x>
      <y>697</y>
     </hint>
     <hint type="destinationlabel">
@@ -2392,7 +2462,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
+     <x>504</x>
      <y>737</y>
     </hint>
     <hint type="destinationlabel">
@@ -2408,7 +2478,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
+     <x>504</x>
      <y>737</y>
     </hint>
     <hint type="destinationlabel">
@@ -2424,7 +2494,7 @@
    <slot>keyboardPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>391</x>
+     <x>551</x>
      <y>737</y>
     </hint>
     <hint type="destinationlabel">
@@ -2440,7 +2510,7 @@
    <slot>keyboardReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>391</x>
+     <x>551</x>
      <y>737</y>
     </hint>
     <hint type="destinationlabel">
@@ -2449,10 +2519,76 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>leftClicked</sender>
+   <signal>pressed()</signal>
+   <receiver>RemoteClient</receiver>
+   <slot>sendMousePress()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>132</x>
+     <y>645</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>250</x>
+     <y>377</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>leftClicked</sender>
+   <signal>released()</signal>
+   <receiver>RemoteClient</receiver>
+   <slot>sendMouseRelease()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>132</x>
+     <y>645</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>250</x>
+     <y>377</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rightClicked</sender>
+   <signal>pressed()</signal>
+   <receiver>RemoteClient</receiver>
+   <slot>sendMousePress()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>352</x>
+     <y>645</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>250</x>
+     <y>377</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rightClicked</sender>
+   <signal>released()</signal>
+   <receiver>RemoteClient</receiver>
+   <slot>sendMouseRelease()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>352</x>
+     <y>645</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>250</x>
+     <y>377</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>keyboardPressed()</slot>
   <slot>keyboardReleased()</slot>
   <slot>disconnectFromNetwork()</slot>
+  <slot>sendMousePress()</slot>
+  <slot>sendMouseRelease()</slot>
  </slots>
 </ui>

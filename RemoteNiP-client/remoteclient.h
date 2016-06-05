@@ -48,6 +48,9 @@ private slots:
     void altButtonIndicator();
     void ctrlButtonIndicator();
     void disconnectFromNetwork();
+    void sendMousePress();
+    void sendMouseRelease();
+    void sendMouseMove(const QPointF& delta);
 
 };
 

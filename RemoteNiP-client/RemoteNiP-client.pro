@@ -15,9 +15,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        remoteclient.cpp
+        remoteclient.cpp \
+    touchpad.cpp
 
-HEADERS  += remoteclient.h
+HEADERS  += remoteclient.h \
+    touchpad.h
 
 FORMS    += remoteclient.ui
 
@@ -38,3 +40,6 @@ DISTFILES += \
     img/build.gradle
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/img
+
+RESOURCES += \
+    data.qrc
